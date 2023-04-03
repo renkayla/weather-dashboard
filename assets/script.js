@@ -76,3 +76,26 @@ fetch(queryURL)
     geoLat = data[0].lat;
 })
 
+var weatherUrl ='https://api.openweathermap.org/data/2.5/weather?q=' + getLat + "&lon="+ geoLon + "&exclude=minutely,hourly,alerts&units=imperial&appid=ca41d124f68a16bcc3e73b56ac60dbb";
+ fetch(weatherUrl)
+
+ .then(function (response) {
+    return response.json();
+
+ })
+ .then(function (data) {
+
+    weatherIcon= data.current.weather[0].icon;
+    imgSrc = "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
+    icon.attr('src', imgSrc)
+
+    cityName.text(cityCode);
+
+    var date = new Date(data.current.dt * 1000);
+    dateTime.text("("+ (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + ")");
+
+    temp.text("Temperature: "+ data.current.tempt + " F");
+    humidity.text("Humidity: " + data.current.humidity + " %");
+    wind.text("Wind Speed: " + data.current.wind_speed + " MPH");
+    
+ })
