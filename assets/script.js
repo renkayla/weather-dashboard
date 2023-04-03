@@ -98,4 +98,23 @@ var weatherUrl ='https://api.openweathermap.org/data/2.5/weather?q=' + getLat + 
     humidity.text("Humidity: " + data.current.humidity + " %");
     wind.text("Wind Speed: " + data.current.wind_speed + " MPH");
     
+
+    var uvi =$("<div>")
+    uvIndex.text("UV Index: ");
+    uvi.text(data.current.uvi)
+    uvIndex.append(uvi)
+    uvIndex.addClass("d-flex")
+
+    if (data.current.uvi < 3){
+        uvi.attr("style", "background-color:green; color:black; margin-left: 5px")
+    } else if (data.current.uvi < 6) {
+        uvi.attr("style", "background-color:blue; color:black; margin-left: 5px")
+    } else if (data.current.uvi < 8) {
+        uvi.attr("style", "background-color:yellow; color:black; margin-left: 5px")
+    } else if (data.current.uvi <11) {
+        uvi.attr("style", "background-color:purple; color:black; margin-left: 5px")
+    } else {
+        uvi.attr("style", "background-color:red; color:black; margin-left: 5px")
+    }
+
  })
