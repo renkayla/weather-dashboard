@@ -117,4 +117,30 @@ var weatherUrl ='https://api.openweathermap.org/data/2.5/weather?q=' + getLat + 
         uvi.attr("style", "background-color:red; color:black; margin-left: 5px")
     }
 
- })
+
+    var containerBlue =$("<div>")
+    this["futureDate"+i] = $("<h>") 
+    this["futureIcon"+i] = $("<img>")
+    this["futureTemp"+i] = $("<div>")
+    this["futureWind"+i] = $("<div>")
+    this["futureHumidity"+i] = $("<div>")
+    this["forecastDay"+i] = new Date(data.daily[i].dt * 1000);
+
+    (this["futureDate"+i]).text(((this["forecastDay"+i]).getMonth()+1) + "/" + (this["forecastDay+i"]).getDate() + "/" + (this["forecastDay"+i]).getFullYear());
+    (this["futreTemp"+i]).text("Temperature:"+ data.daily[i].temp.day + " F");
+    (this["futureWind"+i]).text("Wind: "+ data.daily[i].wind_speed+ " MPH");
+    (this["futureHumidity"+i]).text("Humidity: " + data.daily[i].humidity + " %");
+    (this["weatherIcon"+i])= data.daily[i].weather[0].icon);
+
+    DateimgSrc = "https://openweathermap.org/img/wn" + (this["weatherIcon"+i]) + ".png";
+    (this["futureIcon"+i]).attr('src',DateimgSrc)
+
+    $(".five-day").append(containerBlue)
+    containerBlue.append((this[""+i]));
+    containerBlue.append((this[""+i]));
+    containerBlue.append((this[""+i]));
+    containerBlue.append((this[""+i]));
+    containerBlue.append((this[""+i]));
+
+    containerBlue.addClass("weather-card")
+}
