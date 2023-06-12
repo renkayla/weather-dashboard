@@ -30,14 +30,16 @@ This project is a web application that utilizes the OpenWeatherMap API to displa
 5. The current weather and 5-day forecast for the specified city will be displayed.
 6. Click on a previous search item in the search history to retrieve weather information for that city.
 
+## License
+This project is licensed under the MIT License.
+
+## Acknowledgements
+OpenWeatherMap: Weather data and API services.
+
 ## Configuration
 
 
 ```javascript
 var APIKey = "1771ec563fa3047709a309efe091549f";
 
-## License
-This project is licensed under the MIT License.
 
-## Acknowledgements
-OpenWeatherMap: Weather data and API services.
