@@ -7,6 +7,8 @@
 
 This project is a web application that utilizes the OpenWeatherMap API to display weather information for a given city. Users can search for a city and view the current weather, as well as a 5-day forecast.
 
+![127 0 0 1_5500_index html (3)](https://github.com/renkayla/weather-dashboard/assets/116777951/207fc6f9-9821-4db9-a66a-7287cf9d56f0)
+
 ## Features
 
 - Search for a city: Users can enter the name of a city to retrieve weather information.
